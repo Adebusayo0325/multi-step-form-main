@@ -1,0 +1,438 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.choices{
+    display: flex;
+    justify-content: space-between;
+}
+.checker-box {
+  position: relative;
+  display: inline-block;
+  width: 110px;
+  height: 140px;
+  margin-left: 0;
+  
+}
+
+.checker-box input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.inner-box{
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #fff;
+  border:  2px solid hsl(243, 100%, 62%);
+  -webkit-transition: .4s;
+  transition: .4s;
+  padding: 0.5rem 0.5rem;
+  padding-bottom: 0rem;
+}
+.inner-el{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.inner-el img{
+  width: 40px;
+  height: 40px;
+}
+.plan-info h3{
+ color: hsl(213, 96%, 18%);
+ font-size: 0.7rem;
+}
+.plan-info p{
+        font-size: 0.7rem;
+    color: hsl(231, 11%, 63%);
+    font-family: 'Ubuntu';
+    font-weight: 500;
+}
+.plan-info .offer{
+  color: hsl(213, 96%, 18%);
+  margin-bottom: 0.5rem;
+}
+/* 
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  opacity: 0;
+  transition: .4s;
+} */
+
+input:checked + .inner-box {
+  background-color: hsl(228, 100%, 84%);
+  border:  2px solid hsl(243, 100%, 62%);
+}
+
+input:focus + .inner-box {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+/* input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+} */
+
+/* Rounded sliders */
+.inner-box.round {
+  border-radius: 10px;
+}
+
+
+.time{
+  width: 100%;
+  /* height: 50px; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: hsl(231, 11%, 63%);
+  background-color: hsl(229, 24%, 87%);
+  margin-top: 5rem;
+  padding: 0.5rem 0;
+  border-radius: 5px;
+}
+.time h3{
+  font-size: 0.9rem;
+  font-family: 'Ubuntu-Medium';
+  font-weight: 700;
+}
+.mon{
+  color: hsl(231, 11%, 63%);
+}
+.toggl{
+  color: hsl(213, 96%, 18%);
+}
+.year{
+  color: hsl(231, 11%, 63%);
+}
+.toggl{
+  color: hsl(213, 96%, 18%);
+}
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 70px;
+  height: 34px;
+  margin:  0 0.5rem;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: hsl(213, 96%, 18%);
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: hsl(243, 100%, 62%);
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px hsl(243, 100%, 62%);
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(36px);
+  -ms-transform: translateX(36px);
+  transform: translateX(36px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+
+
+.container .action .btn-prev:hover{
+  font-weight: 700;
+}
+
+
+@media screen  and (min-width:550px) {
+    .container .action .btn-prev{
+    position: absolute;
+    bottom: 4%;
+    right: 45%;
+    padding: 0.7rem 1.7rem;
+    color: hsl(213, 96%, 18%);
+    background-color: transparent;
+    font-size: 0.9rem;
+    border-radius: 5px;
+    border: 0;
+    font-weight: 'Ubuntu-Bold';
+    font-weight: 500;
+
+}
+  
+}
+
+@media screen  and (max-width:500px) {
+  
+.choices{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+.checker-box {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  min-height: 100px;
+  margin-left: 0;
+  margin: 0.4rem 0;
+  
+}
+.inner-el{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+.inner-el img{
+  width: 50px;
+  height: 50px;
+}
+.plan-info {
+  margin-left: 1rem;
+  height: 100%;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+.plan-info h3{
+ color: hsl(213, 96%, 18%);
+ font-size: 1rem;
+}
+.plan-info p{
+        font-size: 0.7rem;
+    color: hsl(231, 11%, 63%);
+    font-family: 'Ubuntu';
+    font-weight: 500;
+}
+.plan-info .offer{
+  color: hsl(213, 96%, 18%);
+  margin-bottom: 0.5rem;
+}
+.time{
+  width: 100%;
+  /* height: 50px; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: hsl(231, 11%, 63%);
+  background-color: hsl(229, 24%, 87%);
+  margin-top: 1rem;
+  padding: 0.5rem 0;
+  border-radius: 5px;
+}
+  .container .btn-prev{
+    position: absolute;
+    bottom: -9%;
+    left: 3%;
+     padding: 0.7rem 1.7rem;
+    color: hsl(213, 96%, 18%);
+    background-color: transparent;
+    font-size: 0.9rem;
+    border-radius: 5px;
+    border: 0;
+    font-weight: 'Ubuntu-Bold';
+    font-weight: 500;
+
+}
+}
+
+
+
+@media screen  and (max-width: 375px) {
+  
+.choices{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+.checker-box {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  height: 70px;
+  margin-left: 0;
+  margin: 0.3rem 0;
+  
+}
+.inner-el{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+.inner-el img{
+  width: 45px;
+  height: 45px;
+}
+.plan-info {
+  margin-left: 1rem;
+  height: 100%;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+.plan-info h3{
+ color: hsl(213, 96%, 18%);
+ font-size: 1.2rem;
+}
+.plan-info p{
+        font-size: 0.9rem;
+    color: hsl(231, 11%, 63%);
+    font-family: 'Ubuntu';
+    font-weight: 500;
+}
+.time{
+  width: 100%;
+  /* height: 50px; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: hsl(231, 11%, 63%);
+  background-color: hsl(229, 24%, 87%);
+  margin-top: 0.5rem;
+  padding: 0.5rem 0;
+  border-radius: 5px;
+}
+  .container .btn-prev{
+    position: absolute;
+    bottom: -9%;
+    left: 3%;
+     padding: 0.7rem 1.7rem;
+    color: hsl(213, 96%, 18%);
+    background-color: transparent;
+    font-size: 0.9rem;
+    border-radius: 5px;
+    border: 0;
+    font-weight: 'Ubuntu-Bold';
+    font-weight: 500;
+
+}
+}
+
+
+@media screen  and (max-width: 322px) {
+  
+.choices{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+.checker-box {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  height: 60px;
+  margin-left: 0;
+  margin: 0.3rem 0;
+  
+}
+.inner-el{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+.inner-el img{
+  width: 40px;
+  height: 40px;
+}
+.plan-info {
+  margin-left: 1rem;
+  height: 100%;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+.plan-info h3{
+ color: hsl(213, 96%, 18%);
+ font-size: 1.2rem;
+}
+.plan-info p{
+        font-size: 0.9rem;
+    color: hsl(231, 11%, 63%);
+    font-family: 'Ubuntu';
+    font-weight: 500;
+}
+.time{
+  width: 100%;
+  /* height: 50px; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: hsl(231, 11%, 63%);
+  background-color: hsl(229, 24%, 87%);
+  margin-top: 0.7rem;
+  padding: 0.5rem 0;
+  border-radius: 5px;
+}
+  .container .btn-prev{
+    position: absolute;
+    bottom: -9%;
+    left: 3%;
+     padding: 0.7rem 1.7rem;
+    color: hsl(213, 96%, 18%);
+    background-color: transparent;
+    font-size: 0.9rem;
+    border-radius: 5px;
+    border: 0;
+    font-weight: 'Ubuntu-Bold';
+    font-weight: 500;
+
+}
+}

@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="style2.css">
+  <link rel="stylesheet" href="style.css">
+  <title>Frontend Mentor | Multi-step form</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+
+  <!-- Sidebar start -->
+<div class="container">
+  <div class="sidebar">
+    <div class="step">
+      <button class="btn-step " id="step1">1</button>
+      <div class="step-inner">
+   <h5>Step 1 </h5>
+  <h3>Your info</h3>
+      </div>
+    </div>
+
+    <div class="step">
+      <button class="btn-step action-step" >2</button>
+      <div class="step-inner">
+   <h5>Step 2</h5>
+  <h3> Select plan</h3>
+      </div>
+    </div>
+
+    <div class="step">
+      <button class="btn-step" >3</button>
+      <div class="step-inner">
+   <h5>Step 3 </h5>
+  <h3>  Add-ons</h3>
+      </div>
+    </div>
+
+      <div class="step">
+      <button class="btn-step" >4</button>
+      <div class="step-inner">
+   <h5>Step 4 </h5>
+  <h3>  Summary</h3>
+      </div>
+    </div>
+ 
+
+  </div>
+  <!-- Sidebar end -->
+
+  <!-- Step 1 start -->
+<div class="action">
+  <div class="content">
+<h1>    Select your plan
+</h1>
+<p>  You have the option of monthly or yearly billing.
+</p>
+<div class="form">
+<div class="choices">
+<label class="checker-box">
+  <input  class="plan" id="arcade" type="checkbox">
+  <div class="inner-box round">
+    <div class="inner-el">
+      <img src="assets/images/icon-arcade.svg" alt="arcade">
+
+      <div class="plan-info">
+        <h3 id="arcaded">Arcade</h3>
+        <p class="mon0">$9/mo</p>
+        <h5 class="offer">2 months free</h5>
+      </div>
+
+    </div>
+  </div>
+</label>
+
+<label class="checker-box">
+  <input   class="plan" id="advanced" type="checkbox">
+ <div class="inner-box round">
+    <div class="inner-el">
+      <img src="assets/images/icon-advanced.svg" alt="advanced">
+
+      <div class="plan-info">
+        <h3 id="advanceded">Advanced</h3>
+        <p class="monn0">$12/mo</p>
+        <h5 class="offer">2 months free</h5>
+      </div>
+
+    </div>
+ </div>
+</label>
+
+<label class="checker-box">
+  <input  class="plan" id="pro" type="checkbox">
+<div class="inner-box round">
+    <div class="inner-el">
+      <img src="assets/images/icon-pro.svg" alt="pro">
+
+      <div class="plan-info">
+        <h3 class="proed">Pro</h3>
+        <p class="moon0">$15/mo</p>
+        <h5 class="offer">2 months free</h5>
+      </div>
+
+    </div>
+</div>
+</label>
+</div>
+
+<div class="time">
+  <h3 class="mon">Monthly</h3>
+  <label class="switch">
+  <input id="time-input" type="checkbox">
+  <span class="slider round"></span>
+</label>
+
+  <h3 class="year">Yearly</h3>
+</div>
+  </div>
+
+  </div>
+   <button type="submit" class="btn-prev">  Go Back</button>
+  <button type="submit" class="btn-next">  Next Step</button>
+</div>
+</div>
+  <!-- Step 1 end -->
+
+  <!-- Step 2 start -->
+
+
+  <!-- Step 5 end -->
+  
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="https://www.ace.netlify.app">Ace</a>.
+  </div>
+</body>
+
+<script>
+const arcade= document.getElementById('arcade')
+const advanced= document.getElementById('advanced')
+const pro= document.getElementById('pro')
+
+const checkers = document.querySelectorAll('.plan')
+
+arcade.checked = true
+checkers.forEach( checker => checker.addEventListener('click', (e) => singleChoice(e.target)))
+
+function singleChoice (checkered){
+// if( arcade.checked && advanced.checked && pro.checked){
+  if(arcade === checkered){
+    arcade.checked = true
+    advanced.checked = false
+    pro.checked = false
+
+  }
+
+   if(advanced === checkered){
+    advanced.checked = true
+    arcade.checked = false
+    pro.checked = false
+  }
+
+  if(pro === checkered){
+    pro.checked = true
+    arcade.checked = false
+    advanced.checked = false
+  }
+}
+// }
+function uncheck () {
+  checkers.forEach( checker => checker.checked = false)
+}
+
+const nextBtn = document.querySelector('.btn-next');
+const content = document.querySelectorAll('.content');
+const prevBtn = document.querySelector('.btn-prev');
+
+
+const month = document.querySelector('.mon');
+const year = document.querySelector('.year');
+const timeChoice = document.querySelector('#time-input');
+const OfferYear = document.querySelectorAll('.offer');
+const $Arcade = document.querySelector('.mon0')
+const $Pro = document.querySelector('.moon0')
+const $Advanced = document.querySelector('.monn0')
+
+month.classList.add('toggl')
+
+let current = 0;
+let season = [
+  {
+    month:`$9/mo`,
+    year: `$90/yr`
+},
+{
+    month:`$12/mo`,
+    year: `$120/yr`
+},
+{
+    month:`$15/mo`,
+    year: `$150/yr`
+}
+]
+
+function rateMonth(choice){
+  $Arcade.innerText = choice[current].month
+  $Advanced.innerText = choice[current + 1].month
+  $Pro.innerText = choice[current + 2].month
+}
+
+function rateYear(choice){
+  $Arcade.innerText = choice[current].year
+  $Advanced.innerText = choice[current + 1].year
+  $Pro.innerText = choice[current + 2].year
+}
+timeChoice.addEventListener('click', () => choosetime())
+
+function choosetime (){
+  if(timeChoice.checked){
+
+
+rateYear(season)
+    month.classList.remove('toggl')
+    OfferYear.forEach(offer => offer.style.display = "block" )
+      return  year.classList.add('toggl')
+   
+  }
+
+  rateMonth(season)
+ OfferYear.forEach(offer => offer.style.display = "none")
+    year.classList.remove('toggl')
+  return  month.classList.add('toggl')
+   
+}
+choosetime()
+</script>
+</html>

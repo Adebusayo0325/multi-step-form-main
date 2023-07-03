@@ -1,0 +1,588 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+@font-face {
+    font-family: 'Ubuntu-Bold';
+    src: url(assets/fonts/Ubuntu-Bold.ttf);
+}
+@font-face {
+    font-family: 'Ubuntu-Medium';
+    src: url(assets/fonts/Ubuntu-Medium.ttf);
+}
+@font-face {
+    font-family: 'Ubuntu';
+    src: url(assets/fonts/Ubuntu-Regular.ttf);
+}
+body{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background-color: hsl(229, 24%, 87%);
+    font-family: 'Ubuntu';
+}
+button{
+    cursor: pointer;
+}
+.container{
+    background-color: #fff;
+    padding: 0.5rem;
+    display: flex;
+    flex-wrap: wrap;    
+    flex-wrap: nowrap;    
+    min-height: 50%;
+    height: 600px;
+    min-width: 50%;
+    border-radius: 5px;
+    box-shadow: 0px 10px 20px  rgba(3, 8, 79, 0.3);
+    position: relative;
+}
+.sidebar{
+    flex:1 1 28.5rem;
+    
+    background-image: url(assets/images/bg-sidebar-desktop.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 1.5rem 1.5rem;
+    border-radius: 5px;
+    overflow: hidden;
+}
+.step{
+    display: flex;
+    width: 90%;
+    margin: 1.5rem 0;
+}
+.btn-step{
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    font-weight: 'Ubuntu-Medium';
+    font-size: 0.8rem;
+    background-color: transparent;
+    border: solid 2px hsl(231, 100%, 99%);
+    color: hsl(231, 100%, 99%);
+}
+.btn-step.action-step{
+    background-color:  hsl(206, 94%, 87%);
+    color:  #000;
+    border: none;
+}
+.step-inner{
+    display: flex;
+    flex-direction: column;
+    margin-left: 1.1rem;
+    
+}
+.step-inner h5{
+    font-size: 0.7rem;
+    color: hsl(231, 11%, 63%);
+    text-transform: uppercase;
+}
+.step-inner h3{
+    color: hsl(231, 100%, 99%);
+    font-weight: 400;
+    font-family:'Ubuntu-Medium';
+    font-size: 0.8rem;
+    text-transform: uppercase;
+}
+.action{
+    flex:  2 1 51.5rem;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-evenly; */
+}
+.content{
+    width: 75% ;
+    margin: 1rem auto;
+    position: relative;
+    height: 100%;
+}
+.action .content h1{
+    width: 100%;
+    margin: 0 auto;
+    color: hsl(213, 96%, 18%);
+    font-size: 1.8rem;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+.action .content p{
+    font-size: 0.9rem;
+    color: hsl(231, 11%, 63%);
+    font-family: 'Ubuntu';
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+}
+.action .content .form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.action .content form .form-control{
+    display: flex;
+    flex-direction: column;
+    margin: 0.5rem 0;
+}
+.action .content form .form-control input{
+    height: 50px;
+    border-radius: 5px;
+    padding: 1rem;
+    color: hsl(213, 96%, 18%);
+    background: transparent;
+    background-color: #fff;
+    font-weight: 500;
+    font-family: 'Ubuntu-Bold';
+    border:  solid 2px  hsl(229, 24%, 87%);
+  
+}
+.action .content form .form-control input:valid{
+      background-color: #fff;
+       color: hsl(213, 96%, 18%);
+       border:  solid 2px  hsl(229, 24%, 87%);
+}
+.action .content form .form-control input:focus, .action .content form .form-control input:active{
+background-color :#fff;
+outline: 0;
+ color: hsl(213, 96%, 18%);
+ border: solid 2px hsl(243, 100%, 62%);
+}
+input::placeholder{
+    width: 100%;
+    margin: 5%;
+}
+
+.action .content form .form-control input:invalid{
+    border: solid 2px hsl(354, 84%, 57%);
+}
+
+input:disabled{
+    border: 2px solid hsl(279, 6%, 55%);
+}
+.action .content form .form-control label{
+    color: hsl(213, 96%, 18%);
+  font-family:'Ubuntu-Bold';
+  font-size: 0.9rem;
+  margin-bottom: 0.6rem;
+}
+.container .action .btn-next{
+    position: absolute;
+    /* bottom: 4%; */
+    right: 8%;
+    padding: 0.7rem 1.7rem;
+    background-color: hsl(213, 96%, 18%);
+    color: hsl(229, 24%, 87%);
+    font-size: 0.9rem;
+    border-radius: 5px;
+    border: 0;
+
+}
+@media screen and (max-width:1000px) and (orientation: landscape){
+
+body{
+     min-height: 700px; 
+}
+
+}
+
+
+
+
+@media screen and (min-width: 700px) and (max-width: 1000px) {
+   .container{
+    background-color: #fff;
+    padding: 0.5rem;
+    display: flex;
+    flex-wrap: wrap;    
+    flex-wrap: nowrap;    
+    min-height: 30%;
+    height: 600px;
+    min-width: 75%;
+    border-radius: 5px;
+    box-shadow: 0px 10px 20px  rgba(3, 8, 79, 0.3);
+    position: relative;
+}
+
+.sidebar{
+    flex:1 1 28.5rem;
+    
+    background-image: url(assets/images/bg-sidebar-desktop.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 1.5rem 1.5rem;
+    border-radius: 5px;
+    overflow: hidden;
+} 
+.action{
+
+    flex:  2 1 51.5rem;
+
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-evenly; */
+}
+.content{
+    width: 75% ;
+    margin: 1rem auto;
+    position: relative;
+    height: 100%;
+}
+
+    
+}
+@media screen and (min-width: 550px){
+    .container .action .btn-next{
+    position: absolute;
+    bottom: 4%;
+    right: 8%;
+    padding: 0.7rem 1.7rem;
+    background-color: hsl(213, 96%, 18%);
+    color: hsl(229, 24%, 87%);
+    font-size: 0.9rem;
+    border-radius: 5px;
+    border: 0;
+
+}
+}
+
+@media screen and (max-width:500px) {
+    body{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+    background-color: #fff;
+    font-family: 'Ubuntu';
+}
+    .container{
+    background-color: hsl(206, 94%, 87%);
+    padding: 0rem;
+    display: flex;
+    flex-wrap: wrap;    
+    min-height: 50%;
+    height: 90vh;
+    min-width:98%;
+    width: 100%;
+    max-width:100%;
+    border-radius: 5px;
+    box-shadow: none;
+    position: relative;
+}
+.sidebar{
+    flex:1 1 28.5rem;
+    height: 30%;
+    background-image: url(assets/images/bg-sidebar-mobile.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 1.5rem 1.5rem;
+    border-radius: 5px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+}
+
+.step{
+    display: flex;
+    width:70px;
+    overflow: hidden;
+    margin: 1.5rem 0rem;
+    justify-content: space-around;
+    padding: 0;
+    position: relative;
+    
+}
+.btn-step{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-weight: 'Ubuntu-Medium';
+    font-size: 0.8rem;
+    margin: 0;
+    padding: 0;
+    /* margin-left: -5rem; */
+    background-color: transparent;
+    border: solid 2px hsl(231, 100%, 99%);
+    color: hsl(231, 100%, 99%);
+}
+
+.btn-step.action-step{
+    background-color:  hsl(206, 94%, 87%);
+    color:  #000;
+    border: none;
+}
+.step-inner{
+    display: flex;
+    flex-direction: column;
+    margin-left: 0rem;
+    display: none;
+
+}
+.step-inner h5{
+    font-size: 0.1rem;
+    color: hsl(231, 11%, 63%);
+    text-transform: uppercase;
+}
+.step-inner h3{
+    color: hsl(231, 100%, 99%);
+    font-weight: 400;
+    font-family:'Ubuntu-Medium';
+    font-size: 0.1rem;
+    text-transform: uppercase;
+}
+.action{
+    flex:  2 1 51.5rem;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-evenly; */
+}
+.content{
+    width: 90% ;
+    margin: 1rem auto;
+    position: relative;
+    top: -20.5%;
+    left:0%;
+    min-height: 50%;
+    overflow-x: hidden;
+    padding: 2rem;
+    border-radius: 10px;
+    background-color: #fff;
+}
+.container .btn-next{
+    position: absolute;
+    bottom: -9%;
+    right: 3%;
+    padding: 0.7rem 1.7rem;
+    background-color: hsl(213, 96%, 18%);
+    color: hsl(229, 24%, 87%);
+    font-size: 1.2rem;
+    border-radius: 5px;
+    border: 0;
+
+}
+.attribution{
+    position: absolute;
+    bottom: -15%;
+}
+.action .content form .form-control label{
+    color: hsl(213, 96%, 18%);
+  font-family:'Ubuntu-Medium';
+  font-size: 1rem;
+  margin-bottom: 0.6rem;
+}
+
+.action .content h1{
+    width: 100%;
+    margin: 0 auto;
+    color: hsl(213, 96%, 18%);
+    font-size: 2rem;
+    font-weight: 700;
+    font-family: 'Ubuntu-Bold';
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+.action .content p{
+    font-size: 18px;
+    color: hsl(231, 11%, 63%);
+    font-family: 'Ubuntu';
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+}
+.action .content form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.action .content form .form-control{
+    display: flex;
+    flex-direction: column;
+    margin: 0.5rem 0;
+}
+.action .content form .form-control input{
+    height: 50px;
+    border-radius: 5px;
+    padding: 1rem;
+    color: hsl(213, 96%, 18%);
+    background: transparent;
+    background-color: #fff;
+    font-weight: 500;
+    font-size: 1.2rem;
+    font-family: 'Ubuntu-Bold';
+    border:  solid 2px  hsl(229, 24%, 87%);
+  
+}
+}
+
+
+@media screen and (max-width: 376px){
+    .content{
+        left: 0%;
+    }
+    .content{
+    width: 90% ;
+    margin: 1rem auto;
+    position: relative;
+    top: -18%;
+    left:0%;
+    min-height: 50%;
+    overflow-x: hidden;
+    padding: 1rem;
+    border-radius: 10px;
+    background-color: #fff;
+}
+}
+
+@media screen and (max-width: 364px){
+    .content{
+        left: 0%;
+    }
+    .content{
+    width: 90% ;
+    margin: 1rem auto;
+    position: relative;
+    top: -20.5%;
+    left:0%;
+    min-height: 50%;
+    overflow-x: hidden;
+    padding: 1rem;
+    border-radius: 10px;
+    background-color: #fff;
+}
+}
+
+@media screen and (max-width: 322px){
+   body{
+    min-height: 100vh;
+   }
+   .container{
+    height: 100%;
+   }
+    .sidebar{
+    flex:1 1 28.5rem;
+    height: 45%;
+    background-image: url(assets/images/bg-sidebar-mobile.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 1.5rem 1.5rem;
+    border-radius: 5px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+}
+
+    .content{
+    width: 90% ;
+    margin: 1rem auto;
+    position: relative;
+    top: -27%;
+    left:0%;
+    min-height: 70%;
+    overflow-x: hidden;
+    padding: 0.5rem;
+    border-radius: 10px;
+    background-color: #fff;
+}
+
+
+.container .btn-next{
+    position: absolute;
+    bottom: -9%;
+    right: 3%;
+    padding: 0.7rem 1.7rem;
+    background-color: hsl(213, 96%, 18%);
+    color: hsl(229, 24%, 87%);
+    font-size: 1.2rem;
+    border-radius: 5px;
+    border: 0;
+
+}
+.attribution{
+    position: absolute;
+    bottom: -15%;
+}
+.action .content form .form-control label{
+    color: hsl(213, 96%, 18%);
+  font-family:'Ubuntu-Medium';
+  font-size: 0.8rem;
+  margin-bottom: 0.4rem;
+}
+
+.action .content h1{
+    width: 100%;
+    margin: 0 auto;
+    color: hsl(213, 96%, 18%);
+    font-size: 1.5rem;
+    font-weight: 700;
+    font-family: 'Ubuntu-Bold';
+    margin-top: 0.5rem;
+    margin-bottom: 0.3rem;
+}
+.action .content p{
+    font-size: 15px;
+    color: hsl(231, 11%, 63%);
+    font-family: 'Ubuntu';
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+.action .content form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.action .content form .form-control{
+    display: flex;
+    flex-direction: column;
+    margin: 0.5rem 0;
+}
+.action .content form .form-control input{
+    height: 40px;
+    border-radius: 5px;
+    padding: 0.7rem;
+    color: hsl(213, 96%, 18%);
+    background: transparent;
+    background-color: #fff;
+    font-weight: 500;
+    font-size: 1rem;
+    font-family: 'Ubuntu-Bold';
+    border:  solid 2px  hsl(229, 24%, 87%);
+  
+}
+}
+
+.action:nth-child(1) {
+    display: none;
+}
+.action:nth-child(2) {
+    /* the formemail */
+    display: block;
+}
+
+.action:nth-child(3) {
+    /* the arcades */
+    display: none;
+}
+.action:nth-child(4) {
+    /* the storages */
+    display:none;
+}
+.action:nth-child(5) {
+    /* the summary */
+    display: none;
+}
+.action:nth-child(6) {
+    /* the summary */
+    display: none;
+}
+/* .action:nth-child(1){
+    display: block;
+} */

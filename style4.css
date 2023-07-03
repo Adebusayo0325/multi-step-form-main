@@ -1,0 +1,70 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+  padding: 0;
+}
+.chosen{
+    width: 100%;
+    background-color: hsl(229, 24%, 87%);
+    padding: 1rem;
+}
+.first{
+    border: 0;
+    border-bottom: solid 2px  hsl(231, 11%, 63%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem 0rem;
+    font-family: 'Ubuntu-Medium';
+}
+#change{
+    font-size: 0.9rem;
+    margin-top: 1rem;
+    color:  hsl(231, 11%, 63%);
+    font-family: 'Ubuntu';
+}
+#made, #firstyear{
+    color: hsl(213, 96%, 18%);
+    font-size: 1.1rem;
+}
+#firstyear{
+  font-size: 0.9rem;
+}
+
+.second{
+    padding: 0.8rem 0rem;
+      display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#added, #added2, #added3, .added,.all{
+    font-size: 0.9rem;
+    color:  hsl(231, 11%, 63%);
+    font-family: 'Ubuntu';
+}
+
+.addition{
+    color: hsl(213, 96%, 18%);
+    font-size: 0.7rem;
+    font-family: 'Ubuntu';
+}
+
+.total{
+   padding: 1rem;
+    margin-top: 1rem;
+      display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#totalx{
+    font-size: 1.4rem;
+    color: hsl(243, 100%, 62%) ;
+} 
+ #fourth4{
+    color: hsl(231, 11%, 63%);
+ }
+ #confirm{
+    color: #fff;
+    background-color: hsl(243, 100%, 62%);
+ }

@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="style2.css">
+  <link rel="stylesheet" href="style3.css">
+  <link rel="stylesheet" href="style.css">
+  <title>Frontend Mentor | Multi-step form</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+
+  <!-- Sidebar start -->
+<div class="container">
+  <div class="sidebar">
+    <div class="step">
+      <button class="btn-step " id="step1">1</button>
+      <div class="step-inner">
+   <h5>Step 1 </h5>
+  <h3>Your info</h3>
+      </div>
+    </div>
+
+    <div class="step">
+      <button class="btn-step /" >2</button>
+      <div class="step-inner">
+   <h5>Step 2</h5>
+  <h3> Select plan</h3>
+      </div>
+    </div>
+
+    <div class="step">
+      <button class="btn-step action-step" >3</button>
+      <div class="step-inner">
+   <h5>Step 3 </h5>
+  <h3>  Add-ons</h3>
+      </div>
+    </div>
+
+      <div class="step">
+      <button class="btn-step" >4</button>
+      <div class="step-inner">
+   <h5>Step 4 </h5>
+  <h3>  Summary</h3>
+      </div>
+    </div>
+ 
+
+  </div>
+  <!-- Sidebar end -->
+
+  <!-- Step 1 start -->
+<div class="action">
+  <div class="content">
+<h1>      Pick add-ons
+</h1>
+<p>    Add-ons help enhance your gaming experience.
+</p>
+<div class="form">
+
+
+<div class="add-ons">
+    <div class="add">
+    <input class="pick" checked type="checkbox" name="online-service" id="online">
+    <div class="add-info">
+<h3 id="onserve">  Online service</h3>
+<p>  Access to multiplayer games</p>
+    </div>
+</div>
+<h6 class="y0"> +$1/mo</h6>
+</div>
+
+  <div class="add-ons">
+    <div class="add">
+    <input class="pick"  checked type="checkbox" name="online-service" id="storage">
+    <div class="add-info">
+<h3 id="larstorg">   Larger storage</h3>
+<p>    Extra 1TB of cloud save</p>
+    </div>
+</div>
+<h6 class="yy00"> +$2/mo</h6>
+</div>
+
+<div class="add-ons">
+    <div class="add">
+    <input class="pick" type="checkbox" name="online-service" id="profile">
+    <div class="add-info">
+<h3 id="cuspro">   Customizable Profile</h3>
+<p>    Custom theme on your profile</p>
+    </div>
+</div>
+<h6 class="yy0"> +$2/mo</h6>
+</div>
+
+
+
+
+  </div>
+
+  </div>
+   <button type="submit" class="btn-prev">  Go Back</button>
+  <button type="submit" class="btn-next">  Next Step</button>
+</div>
+</div>
+  <!-- Step 1 end -->
+
+  <!-- Step 2 start -->
+
+
+  <!-- Step 5 end -->
+  
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="https://www.ace.netlify.app">Ace</a>.
+  </div>
+</body>
+
+<script>
+// const arcade= document.getElementById('arcade')
+// const advanced= document.getElementById('advanced')
+// const pro= document.getElementById('pro')
+
+// const checkers = document.querySelectorAll('.plan')
+
+// arcade.checked = true
+// checkers.forEach( checker => checker.addEventListener('click', (e) => singleChoice(e.target)))
+
+// function singleChoice (checkered){
+// // if( arcade.checked && advanced.checked && pro.checked){
+//   if(arcade === checkered){
+//     arcade.checked = true
+//     advanced.checked = false
+//     pro.checked = false
+//   }
+
+//    if(advanced === checkered){
+//     advanced.checked = true
+//     arcade.checked = false
+//     pro.checked = false
+//   }
+
+//   if(pro === checkered){
+//     pro.checked = true
+//     arcade.checked = false
+//     advanced.checked = false
+//   }
+// }
+// // }
+// function uncheck () {
+//   checkers.forEach( checker => checker.checked = false)
+// }
+
+// const nextBtn = document.querySelector('.btn-next');
+// const content = document.querySelectorAll('.content');
+// const prevBtn = document.querySelector('.btn-prev');
+
+
+// const month = document.querySelector('.mon')
+// const year = document.querySelector('.year')
+// const timeChoice = document.querySelector('#time-input')
+// month.classList.add('toggl')
+
+// timeChoice.addEventListener('click', () => choosetime())
+
+// function choosetime (){
+//   if(timeChoice.checked){
+//     month.classList.remove('toggl')
+    
+//       return  year.classList.add('toggl')
+   
+//   }
+
+  
+ 
+//     year.classList.remove('toggl')
+//   return  month.classList.add('toggl')
+   
+// }
+
+const $Online = document.querySelector('.y0')
+const $Profile = document.querySelector('.yy0')
+const $Storage = document.querySelector('.yy00')
+
+month.classList.add('toggl')
+
+let current = 0;
+let addSect = [
+  {
+    month:`+$1/mo`,
+    year: `+$10/yr`
+},
+{
+    month:`+$2/mo`,
+    year: `+$20/yr`
+},
+{
+    month:`+$2/mo`,
+    year: `+$20/yr`
+}
+]
+
+function rateMonth(choice){
+  $Arcade.innerText = choice[current].month
+  $Advanced.innerText = choice[current + 1].month
+  $Pro.innerText = choice[current + 2].month
+}
+
+function rateYear(choice){
+  $Arcade.innerText = choice[current].year
+  $Advanced.innerText = choice[current + 1].year
+  $Pro.innerText = choice[current + 2].year
+}
+timeChoice.addEventListener('click', () => choosetime())
+
+function choosetime (){
+  if(timeChoice.checked){
+
+
+rateYear(addSect)
+    month.classList.remove('toggl')
+    OfferYear.forEach(offer => offer.style.display = "block" )
+      return  year.classList.add('toggl')
+   
+  }
+
+  rateMonth(addSect)
+ OfferYear.forEach(offer => offer.style.display = "none")
+    year.classList.remove('toggl')
+  return  month.classList.add('toggl')
+   
+}
+choosetime()
+
+const addons = document.querySelectorAll('.add-ons');
+const picks = document.querySelectorAll('.pick');
+
+function addonsHandler(){
+    picks.forEach((pick, indx) => !pick.checked ? addons[indx].classList.remove('selected') : addons[indx].classList.add('selected') )
+
+}
+addonsHandler()
+picks.forEach((pick, indx) => pick.addEventListener("click", (e) =>  !pick.checked ? addons[indx].classList.remove('selected') : addons[indx].classList.add('selected') ))
+</script>
+</html>

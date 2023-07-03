@@ -1,0 +1,153 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.add-ons{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.2rem 1rem;
+    margin: 0.5rem;
+    border-radius: 5px;
+    border: solid 2px  hsl(243, 100%, 62%);
+}
+.selected{
+background-color: hsl(228, 100%, 84%);
+}
+.add{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.add input{
+    border: solid 2px  hsl(231, 11%, 63%);
+    width: 15px;
+height: 15px;
+}
+.add input:checked{
+    background-color: hsl(243, 100%, 62%);
+    color: #fff;
+}
+
+.add-info{
+    margin-left: 0.5rem;
+}
+.add h3{
+ color: hsl(213, 96%, 18%);
+ margin-top: 1rem;
+ font-size: 0.8rem;
+}
+.add p{
+        font-size: 0.9rem;
+    color: hsl(231, 11%, 63%);
+    font-family: 'Ubuntu';
+    margin-top: 0.5rem;
+    font-weight: 500;
+}
+.add-ons h6 {
+ color: hsl(243, 100%, 62%);
+}
+
+@media screen and (max-width: 500px) {
+    .add-ons{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.1rem 0.2rem;
+    margin: 0.5rem 0rem;
+    border-radius: 5px;
+    border: solid 2px  hsl(243, 100%, 62%);
+}
+.selected{
+background-color: hsl(228, 100%, 84%);
+}
+.add{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.add input{
+    border: solid 2px  hsl(231, 11%, 63%);
+    width: 15px;
+height: 15px;
+}
+.add input:checked{
+    background-color: hsl(243, 100%, 62%);
+    color: #fff;
+}
+
+.add-info{
+    margin-left: 0.5rem;
+}
+.add h3{
+ color: hsl(213, 96%, 18%);
+ margin-top: 0.8rem;
+ font-size: 0.7rem;
+}
+.add p{
+        font-size: 0.7rem;
+    color: hsl(231, 11%, 63%);
+    font-family: 'Ubuntu';
+    margin-top: 0.4rem;
+    font-weight: 500;
+}
+.add-ons h6 {
+ color: hsl(243, 100%, 62%);
+}
+}
+
+
+
+
+@media screen and (max-width: 376px) {
+    .add-ons{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.1rem 0.2rem;
+    margin: 0.3rem 0rem;
+    margin-top: 0;
+    border-radius: 5px;
+    border: solid 2px  hsl(243, 100%, 62%);
+}
+.selected{
+background-color: hsl(228, 100%, 84%);
+}
+.add{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.add input{
+    border: solid 2px  hsl(231, 11%, 63%);
+    width: 15px;
+height: 15px;
+}
+.add input:checked{
+    background-color: hsl(243, 100%, 62%);
+    color: #fff;
+}
+
+.add-info{
+    margin-left: 0.5rem;
+}
+.add h3{
+ color: hsl(213, 96%, 18%);
+ margin-top: 0.8rem;
+ font-size: 0.7rem;
+}
+.add p{
+        font-size: 0.7rem;
+    color: hsl(231, 11%, 63%);
+    font-family: 'Ubuntu';
+    margin-top: 0.4rem;
+    font-weight: 500;
+}
+.add-ons h6 {
+ color: hsl(243, 100%, 62%);
+}
+}
