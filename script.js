@@ -293,14 +293,20 @@ function stepRemove() {
     step.classList.remove("action-step");
   });
 }
-
-let noOfClicks = 0;
-next1Btn.addEventListener("click", function (e)  {
-  e.preventDefault();
- 
-  stepRegulate();
+const form = document.getElementById('form-ver');
+form.addEventListener('submit', (e)  => {
+   e.preventDefault()
+stepRegulate();
   next1Page();
-});
+})
+let noOfClicks = 0;
+
+// next1Btn.addEventListener("submit", function (e)  {
+//   e.preventDefault();
+ 
+//   stepRegulate();
+//   next1Page();
+// });
 
 next2Btn.addEventListener("click", () => {
   stepRegulate();
