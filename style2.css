@@ -224,6 +224,7 @@ input:checked + .slider:before {
   display: inline-block;
   width: 100%;
   min-height: 100px;
+  max-height: 101px;
   margin-left: 0;
   margin: 0.4rem 0;
   

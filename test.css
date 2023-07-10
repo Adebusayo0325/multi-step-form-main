@@ -156,7 +156,7 @@ input::placeholder{
     margin: 5%;
 }
 
-.action .content form .form-control input.error{
+.action .content form .form-control input:invalid{
     border: solid 2px hsl(354, 84%, 57%);
 }
 

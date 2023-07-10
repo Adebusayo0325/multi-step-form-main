@@ -297,6 +297,7 @@ const form = document.getElementById('form-ver');
 form.addEventListener('submit', (e)  => {
    e.preventDefault()
 stepRegulate();
+
   next1Page();
 })
 let noOfClicks = 0;
@@ -527,3 +528,14 @@ function confirmed(){
   FinalAct.style.display = "block";
   container.classList.add('final-container');
 }
+
+
+  document.querySelectorAll('.input-case').forEach(input=> input.addEventListener('input', () =>{
+  if(input.value === ""){
+    input.classList.add("error")
+  }
+  else{
+    input.classList.remove('error')
+  }
+})
+  );
