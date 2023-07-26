@@ -13,7 +13,6 @@ const picks = document.querySelectorAll(".pick");
 const next1Btn = document.querySelector("#firstNexter");
 const next2Btn = document.querySelector("#secondNexter");
 const next3Btn = document.querySelector("#thirdNexter");
-// const nextBtn = document.querySelector('.btn-next');
 const content = document.querySelectorAll(".action");
 const prev1Btn = document.querySelector("#firstprev");
 const prev2Btn = document.querySelector("#secondprev");
@@ -65,19 +64,7 @@ function seasonVerify(ver) {
     return (ver = `Monthly`);
   }
 }
-// singleChoice()
 
-// picks.forEach((pick, indx) => {
-//   pick.addEventListener("click", (e) =>  {
-//     if(pick.checked) {
-//   singleChoice()
-
-//   getAddOns()
-// }
-// })
-// })
-
-// }
 function uncheck() {
   checkers.forEach((checker) => (checker.checked = false));
 }
@@ -113,7 +100,6 @@ function rateYear(choice) {
 }
 
 function singleChoice(checkered) {
-  // if( arcade.checked && advanced.checked && pro.checked){
   if (arcade === checkered) {
     arcade.checked = true;
     advanced.checked = false;
@@ -133,6 +119,7 @@ function singleChoice(checkered) {
   }
 }
 function getMadeChoice() {
+  singleChoice()
   if (arcade.checked && !advanced.checked && !pro.checked) {
     if (timeChoice.checked) {
       step2Choice.innerHTML = `${arcaded.innerText}  (<span class="length">Yearly</span>)`;
@@ -150,7 +137,7 @@ function getMadeChoice() {
       step2Choice.innerHTML = `${advanceded.innerText}  (<span class="length">Yearly</span>)`;
       step2price.innerText = `$${season[current + 1].year}/yr`;
     } else {
-      step2Choice.innerHTML = `${arcaded.innerText}  (<span class="length">Monthly</span>)`;
+      step2Choice.innerHTML = `${advanceded.innerText}  (<span class="length">Monthly</span>)`;
       step2price.innerText = `$${season[current + 1].month}/mo`;
     }
   }
@@ -164,18 +151,41 @@ function getMadeChoice() {
       step2price.innerText = `$${season[current + 2].month}/mo`;
     }
   }
+
+  return step2Choice.innerHTML
 }
-// stepRegulate()
 
-//step 3
-// const $Online = document.querySelector('.y0')
-// const $Profile = document.querySelector('.yy0')
-// const $Storage = document.querySelector('.yy00')
+function getMadePrice() {
+  singleChoice()
+  if (arcade.checked && !advanced.checked && !pro.checked) {
+    if (timeChoice.checked) {
+     step2price.innerText = `$${season[current].year}/yr`;
+    } else {
 
-// const  = document.querySelector('.yy00')
-//step 4
+      step2price.innerText = `$${season[current].month}/mo`;
+    }
+  }
 
-// const
+  if (advanced.checked && !arcade.checked && !pro.checked) {
+    if (timeChoice.checked) {
+      step2price.innerText = `$${season[current + 1].year}/yr`;
+    } else {
+      step2price.innerText = `$${season[current + 1].month}/mo`;
+    }
+  }
+
+  if (pro.checked && !advanced.checked && !arcade.checked) {
+    if (timeChoice.checked) {
+      step2price.innerText = `$${season[current + 2].year}/yr`;
+    } else {
+      step2price.innerText = `$${season[current + 2].month}/mo`;
+    }
+  }
+
+
+  return step2price.innerText
+}
+
 function getAddOns() {
   // total()
   picks.forEach((pick, indx) => {
@@ -268,7 +278,6 @@ picks.forEach((pick, indx) =>
       : addons[indx].classList.add("selected")
   )
 );
-//  getAddOns()
 
 let stepCount = 0;
 if (stepCount < 1) {
@@ -300,19 +309,13 @@ stepRegulate();
 
   next1Page();
 })
-let noOfClicks = 0;
 
-// next1Btn.addEventListener("submit", function (e)  {
-//   e.preventDefault();
- 
-//   stepRegulate();
-//   next1Page();
-// });
 
 next2Btn.addEventListener("click", () => {
   stepRegulate();
   singleChoice();
   next1Page();
+  RegulateChanger()
   getMadeChoice();
 });
 next3Btn.addEventListener("click", () => {
@@ -320,11 +323,8 @@ next3Btn.addEventListener("click", () => {
   singleChoice();
   stepRegulate();
   getMadeChoice();
-  // if(noOfClicks < 1){
-  //   getAddOns()
-  // }
+
  
-  noOfClicks++;
   singleChoice();
   getAddOns();
 });
@@ -346,23 +346,18 @@ function next1Page() {
     stepRegulate();
     singleChoice();
     total(m, n, o);
-    console.log(indx);
+
   });
   stepCount++;
   pageCount++;
 }
 
-// function filter () {
-//   if(div.childElementCount > 3){
-// div.removeChild(h3)
-// div.removeChild(h4)
-// }
-// }
+
 prev1Btn.addEventListener("click", () => prev1Page());
 change.addEventListener("click", () => changer());
 prev2Btn.addEventListener("click", () => {
   prev2Page();
-  // filter()
+
 });
 function prev1Page() {
   stepRegulate();
@@ -377,35 +372,34 @@ function prev1Page() {
 
     pageCount = indx - 1;
     stepCount = indx - 1;
-    //  return page.style.display = " none"
+
   });
   stepCount--;
   pageCount--;
 }
+function RegulateChanger(){
+   $chosen.innerHTML = `<div class="first first-choice">
+   <div class="change-option"> <h3 id="made">${getMadeChoice()}</h3>
 
-function changer() {
-  if (noOfClicks >= 2) {
-    $chosen.innerHTML = `<div class="first first-choice">
-   <div class="change-option"> <h3 id="made">Arcade (<span class="length">${seasonVerify(
-     ver
-   )}</span>)</h3>
-
-    <a id="change" href="#">Change</a>
+    <a id="change" onClick = changer() href="#">Change</a>
     </div>
-<h3 id="firstyear">$90/yr</h3>
+<h3 id="firstyear">${getMadePrice()}</h3>
 </div>
 `;
-  }
+}
+
+function changer() {
+  
+  RegulateChanger()
   stepRegulate();
-  noOfClicks++;
-  singleChoice();
+    singleChoice();
   content.forEach((page, indx) => {
     if (indx === 1) {
       stepRemove();
       stepBtn[indx].classList.add("action-step");
       return (page.style.display = "block");
     }
-    pageCount = indx - 1;
+    pageCount = indx - 2;
     stepCount = indx - 1;
     return (page.style.display = " none");
   });
@@ -415,10 +409,8 @@ function prevxPage() {
   content.forEach((page, indx) => {
     if (indx < pageCount) {
       content[pageCount - 1].style.display = "block";
-      // page.style.display = "block"
     }
     content[pageCount].style.display = "none";
-    // content[pageCount -1].style.display = "none"
   });
   stepCount--;
   pageCount--;
@@ -434,7 +426,6 @@ function prev2Page() {
     }
 
     pageCount = indx - 1;
-    //  return page.style.display = " none"
   });
   stepCount--;
   pageCount--;
@@ -523,7 +514,6 @@ function confirmed(){
     content.forEach((page, indx) => {
 
     page.style.display = "none";
-    // content[pageCount -1].style.display = "none"
   });
   FinalAct.style.display = "block";
   container.classList.add('final-container');
